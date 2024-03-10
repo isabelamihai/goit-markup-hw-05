@@ -8,6 +8,7 @@
     --customers-logo-color:#8E8F99; /*light slate*/
     --heading-font-family: "Raleway",Verdana,Tahoma, sans-serif;
     --text-font-family: "Roboto",Verdana,Tahoma, sans-serif;
+    --transition-color: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
  
 * {
@@ -338,6 +339,7 @@ body {
 
 a {
     text-decoration: none;
+    transition: color var(--transition-color);
 }
 
 ul{
@@ -359,11 +361,20 @@ ul{
     font-size: 16px;
     line-height: 1.5;
     color: var(--title-color);
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .global-header .global-nav a:hover,
 .global-header .global-nav a:focus {
     color:var(--color-hover);
+    
+}
+
+.global-header a.active{
+    color:var(--color-hover);
+    border-bottom:4px solid var(--color-hover);
+    border-radius:2px;
+    padding-bottom:20px;
 }
 
 .hero-section {
@@ -376,7 +387,6 @@ ul{
     background-size: cover;
     background-attachment: fixed;
  }
-
 
 h1 {
     font-weight: 700; 
@@ -418,6 +428,7 @@ h3 {
     width: 169px;
     height:56px;
     padding: 16px 32px;
+    transition:background-color var(--transition-color);
 }
 
 .service-button:hover,
@@ -437,6 +448,7 @@ h3 {
     line-height: 1.5;
     letter-spacing: 4%;
     padding:12px 24px;
+    transition: background-color var(--transition-color);
 }
 
 .hero-filters .filters button:hover {
@@ -446,6 +458,32 @@ h3 {
             0 2px 1px 0 rgba(0, 0, 0, 0.08),
             0 3px 1px 0 rgba(0, 0, 0, 0.1);
 }
+
+.img-overlay {
+    position: relative;
+    overflow: hidden;
+}
+
+.overlay {
+    position: absolute;
+    display:flex;
+    justify-content: center;
+    width: 360px;
+    height: 300px;
+    opacity: 0.1;
+    background-color: var(--service-color);
+    transform: translateY(101%);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.text-overlay {
+    color: var(--nav-buton-color);
+    width: 296px;
+    height: 96px;
+    padding-top:40px;
+    padding-left:32px;
+}
+
 
 .third-section {
     background-color: var(--nav-buton-color);
