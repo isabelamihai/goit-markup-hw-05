@@ -8,7 +8,9 @@
     --customers-logo-color:#8E8F99; /*light slate*/
     --heading-font-family: "Raleway",Verdana,Tahoma, sans-serif;
     --text-font-family: "Roboto",Verdana,Tahoma, sans-serif;
-    --transition-color: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    --modal-color:#FCFCFC; /*diary*/
+    --modal-btn:#E7E9FC; /* cornflower*/
 }
  
 * {
@@ -89,6 +91,7 @@
     margin: 24px 100px;
     color: var(--title-color);
     cursor: pointer;
+    transition: color var(--transition);
 }
 
 .first-section .rectangle-svg{
@@ -165,6 +168,7 @@
     border-width: 1px;
     border-style: solid;
     border-color: #E7E9FC;
+    transition: box-shadow var(--transition);
 }
 
 .row li:hover,
@@ -214,6 +218,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: background-color var(--transition);
 }
 
 .company-logo{
@@ -234,6 +239,7 @@
     width: 104px;
     height: 56px;
     margin: 16px 32px;
+    transition: color var(--transition);
 }
 .company-logo li {
     width: 168px;
@@ -245,6 +251,7 @@
     border-color:var(--customers-logo-color);
     background-color: #ffffff;
     cursor:pointer;
+    transition: border-color var(--transition);
 
 }
 
@@ -295,6 +302,7 @@
     display:flex;
     justify-content: center;
     align-items: center;
+    transition: background-color var(--transition);
 }
 
 .social-end p{
@@ -339,7 +347,6 @@ body {
 
 a {
     text-decoration: none;
-    transition: color var(--transition-color);
 }
 
 ul{
@@ -354,6 +361,7 @@ ul{
 .contact-list a{
     color:var(--body-color);
     font-style: normal;
+    transition: color var(--transition);
 }
 
 .global-header .global-nav a{
@@ -361,7 +369,7 @@ ul{
     font-size: 16px;
     line-height: 1.5;
     color: var(--title-color);
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: color var(--transition);
 }
 
 .global-header .global-nav a:hover,
@@ -371,7 +379,6 @@ ul{
 }
 
 .global-header a.active{
-    color:var(--color-hover);
     border-bottom:4px solid var(--color-hover);
     border-radius:2px;
     padding-bottom:20px;
@@ -428,12 +435,69 @@ h3 {
     width: 169px;
     height:56px;
     padding: 16px 32px;
-    transition:background-color var(--transition-color);
+    outline: none;
+    transition: background-color var(--transition);
 }
 
 .service-button:hover,
 .service-button:focus{
     background-color:var(--color-hover);
+}
+
+.is-hidden{
+    visibility: hidden;
+    opacity: none;
+    pointer-events: none;
+    transform: scale(1.1);
+}
+
+.modal {
+    position:fixed;
+    top:0;
+    left:0;
+    width: 100vw;
+    height: 100vh;
+    border-radius:4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom:64px;
+    background-color: rgb(46, 47, 66, 0.4);
+    transition: transform var(--transition);
+}
+
+.modal-content{
+    margin:0 auto;
+    padding: 72px 24px 24px 24px;
+    background-color:var(--modal-color);
+    width:408px;
+    height:584px;
+    position:relative;
+}
+
+.close-btn {
+    background-color:var(--modal-btn);
+    border-radius:50%;
+    outline:none;
+    color:var(--body-color);
+    position:absolute;
+    top:24px;
+    right:24px;
+    height: 24px;
+    width: 24px;
+    border-color: rgba(0, 0, 0, 0.1);
+    transition: background-color var(--transition);
+    transition: fill var(--transition);
+}
+
+.close-btn svg{
+ height: 8px;
+ width: 8px;
+}
+
+.close-btn:hover{
+   background-color: var(--color-hover);
+   fill: #ffffff;
 }
 
 .hero-filters .filters button {
@@ -448,7 +512,7 @@ h3 {
     line-height: 1.5;
     letter-spacing: 4%;
     padding:12px 24px;
-    transition: background-color var(--transition-color);
+    transition: background-color var(--transition), box-shadow var(--transition), color var(--transition);
 }
 
 .hero-filters .filters button:hover {
@@ -467,23 +531,26 @@ h3 {
 .overlay {
     position: absolute;
     display:flex;
+    align-items: flex-start;
     justify-content: center;
+    top:0;
     width: 360px;
-    height: 300px;
-    opacity: 0.1;
-    background-color: var(--service-color);
-    transform: translateY(101%);
-    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    height: 310px;
+    background-color: rgb(77, 90, 229);
+    transition: transform var(--transition);
+    transform:translateY(101%);
+}
+
+.img-overlay:hover .overlay{
+    transform: translateY(0px);
 }
 
 .text-overlay {
     color: var(--nav-buton-color);
     width: 296px;
     height: 96px;
-    padding-top:40px;
-    padding-left:32px;
+    padding-top: 40px;
 }
-
 
 .third-section {
     background-color: var(--nav-buton-color);
