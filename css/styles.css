@@ -449,11 +449,6 @@ h3 {
     transform: scale(1.1);
 }
 
-.overlay-model {
-    position: relative;
-    width: auto;
-    height: 672px;
-}
 
 .modal {
     position:fixed;
