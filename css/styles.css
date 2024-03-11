@@ -490,8 +490,7 @@ h3 {
     height: 24px;
     width: 24px;
     border-color: rgba(0, 0, 0, 0.1);
-    transition: background-color var(--transition);
-    transition: fill var(--transition);
+    transition: background-color var(--transition), fill var(--transition);
 }
 
 .close-btn svg{
@@ -499,7 +498,8 @@ h3 {
  width: 8px;
 }
 
-.close-btn:hover{
+.close-btn:hover,
+.close-btn:focus{
    background-color: var(--color-hover);
    fill: #ffffff;
 }
@@ -519,7 +519,8 @@ h3 {
     transition: background-color var(--transition), box-shadow var(--transition), color var(--transition);
 }
 
-.hero-filters .filters button:hover {
+.hero-filters .filters button:hover,
+.hero-filters .filters button:focus {
    color: #ffffff;
    background-color:var(--color-hover);
    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.12),
