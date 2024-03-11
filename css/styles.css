@@ -446,9 +446,13 @@ h3 {
 
 .is-hidden{
     visibility: hidden;
-    opacity: none;
-    pointer-events: none;
     transform: scale(1.1);
+}
+
+.overlay-model {
+    position: relative;
+    width: auto;
+    height: 672px;
 }
 
 .modal {
